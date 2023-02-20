@@ -1,0 +1,13 @@
+---
+- name: win_ping module demo
+  hosts: windows
+  become: false
+  gather_facts: false
+  tasks:
+    - name: test connection
+      ansible.windows.win_ping:
+    - name: Save the result of 'whoami' in 'whoami_out'
+      ansible.windows.win_command: whoami
+      register: whoami_out
+    - debug:
+        msg: "{{ whoami_out }}"
