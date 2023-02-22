@@ -10,4 +10,4 @@
       ansible.windows.win_command: whoami
       register: whoami_out
     - debug:
-        msg: "{{ whoami_out }}"
+        msg: "{{ whoami_out.changed }}"
