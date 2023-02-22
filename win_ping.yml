@@ -9,5 +9,8 @@
     - name: Save the result of 'whoami' in 'whoami_out'
       ansible.windows.win_command: whoami
       register: whoami_out
+    - name: gathering fact
+      set_fact:
+        whoami: "{{ whoami_out.changed }}"
     - debug:
-        msg: "{{ whoami_out.stdout_lines }}"
+        msg: "{{ whoami }}"
