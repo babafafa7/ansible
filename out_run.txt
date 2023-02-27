@@ -1,0 +1,94 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/ansible
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ansible/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/babafafa7/ansible.git # timeout=10
+Fetching upstream changes from https://github.com/babafafa7/ansible.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/babafafa7/ansible.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 46b74a2409c03cd68e9dadcd964981291aa9bfa0 (origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 46b74a2409c03cd68e9dadcd964981291aa9bfa0 # timeout=10
+Commit message: "Add files via upload"
+ > git rev-list --no-walk 46b74a2409c03cd68e9dadcd964981291aa9bfa0 # timeout=10
+[ansible] $ /var/lib/jenkins/.local/bin/ansible-playbook win_ping.yml -i inventory.ini -f 5
+
+PLAY [win_ping module demo] ****************************************************
+
+TASK [test connection] *********************************************************
+ok: [windows10]
+
+TASK [Save the result of 'whoami' in 'whoami_out'] *****************************
+changed: [windows10]
+
+TASK [debug] *******************************************************************
+ok: [windows10] => {
+    "msg": {
+        "changed": true,
+        "cmd": "whoami",
+        "delta": "0:00:00.421853",
+        "end": "2023-02-22 19:32:41.306634",
+        "failed": false,
+        "rc": 0,
+        "start": "2023-02-22 19:32:40.884780",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "desktop-dpkudh3\\ansible\r\n",
+        "stdout_lines": [
+            "desktop-dpkudh3\\ansible"
+        ]
+    }
+}
+
+PLAY RECAP *********************************************************************
+windows10                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Finished: SUCCESS
+
+
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/ansible
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ansible/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/babafafa7/ansible.git # timeout=10
+Fetching upstream changes from https://github.com/babafafa7/ansible.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/babafafa7/ansible.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 75a1c6cc737645b96d911f1f1b71588cf744386b (origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 75a1c6cc737645b96d911f1f1b71588cf744386b # timeout=10
+Commit message: "Test parse return of task"
+ > git rev-list --no-walk 46b74a2409c03cd68e9dadcd964981291aa9bfa0 # timeout=10
+[ansible] $ /var/lib/jenkins/.local/bin/ansible-playbook win_ping.yml -i inventory.ini -f 5
+
+PLAY [win_ping module demo] ****************************************************
+
+TASK [test connection] *********************************************************
+ok: [windows10]
+
+TASK [Save the result of 'whoami' in 'whoami_out'] *****************************
+changed: [windows10]
+
+TASK [debug] *******************************************************************
+ok: [windows10] => {
+    "msg": true
+}
+
+PLAY RECAP *********************************************************************
+windows10                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Finished: SUCCESS
